@@ -13,6 +13,7 @@
 
       //Verify the value has been updated
       cy.get('.action-email')
+      cy.wait(2000)
         .should('have.value', 'fake@gmail.com')    
     })   
     })
