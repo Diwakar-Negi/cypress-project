@@ -10,7 +10,12 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('https://test-vt-lis.azurewebsites.net/')
+    cy.get(':nth-child(3) > .form-control').type(username)
+    cy.get(':nth-child(4) > .form-control').type(password)
+    cy.get('form > .col-12 > .btn').click()
+    })
 //
 //
 // -- This is a child command --
