@@ -12,8 +12,12 @@
 // -- This is a parent command --
 Cypress.Commands.add('login', (username, password) => {
     cy.visit('https://test-vt-lis.azurewebsites.net/')
-    cy.get(':nth-child(3) > .form-control').type(username)
-    cy.get(':nth-child(4) > .form-control').type(password)
+    //cy.get(':nth-child(3) > .form-control').type(username)
+    //cy.get(':nth-child(4) > .form-control').type(password)
+    cy.fixture('testData').then((data) => {
+        cy.get(':nth-child(3) > .form-control').type(data.validUser.username);
+        cy.get(':nth-child(4) > .form-control').type(data.validUser.password);
+      });  
     cy.get('form > .col-12 > .btn').click()
     })
 //
