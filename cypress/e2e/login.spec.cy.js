@@ -1,26 +1,21 @@
-import LoginPage from '../pageobjects/LoginPage.js';
+import LoginPage from '../support/pageObjects/LoginPage.js';
 
 describe('Login Test using POM', () => {
- /*  beforeEach(() => {
-    cy.visit('https://test-vt-lis.azurewebsites.net/')
-});
-
-  it('should log in successfully', () => {
-    cy.fixture('testData').then((users) => {
-      cy.login(users.validuser.username, users.validuser.password);
-      //cy.get('.btn > .k-button-text').click()
-      //cy.visit('https://test-vt-lis.azurewebsites.net/registration-type')  
-      })
-    }) */
-
-it('should log in successfully', () => {
+   beforeEach(() => {
     cy.fixture('testData').then((users) => {
       LoginPage.visit();
-      LoginPage.enterUserame(users.invaliduser.username); 
-      LoginPage.enterPassword(users.invaliduser.password);
+      LoginPage.enterUserame(users.validuser.username); 
+      LoginPage.enterPassword(users.validuser.password);
       LoginPage.clcikLogin();
-      //cy.login(users.invaliduser.username, users.invaliduser.password);
-      //cy.get('.alert').should('be.visible');
     });
-  }); 
+}); 
+
+/* it('should log in successfully', () => {
+    cy.fixture('testData').then((users) => {
+      LoginPage.visit();
+      LoginPage.enterUserame(users.validuser.username); 
+      LoginPage.enterPassword(users.validuser.password);
+      LoginPage.clcikLogin();
+    });
+  });  */
 });

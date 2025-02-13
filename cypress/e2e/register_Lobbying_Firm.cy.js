@@ -1,11 +1,11 @@
 describe('Register a new Lobbying Firm Registrant Type', () => {
     beforeEach(() => {
       // Visit the initial page where the buttons are located
-        cy.fixture('testData').then(users); => {
+        cy.fixture('testData').then((users) => {
             cy.login(users.validuser.username, users.validuser.password);
             cy.get('.btn > .k-button-text').click();
             cy.visit('https://test-vt-lis.azurewebsites.net/registration-type');  
-        };   
+        });   
     }); 
   
     it('Register Lobbying Firm  when Lobbying Firm Registration is clicked', () => {

@@ -3,10 +3,10 @@ class LoginPage {
         cy.visit('https://test-vt-lis.azurewebsites.net/') // Visit URL
     }
    
-    enterUserame() {
+    enterUserame(username) {
         cy.get(':nth-child(3) > .form-control').type(username) ; // Enter Username
       }
-  enterPassword() {
+  enterPassword(password) {
     cy.get(':nth-child(4) > .form-control').type(password) ; // Enter password
   }
    clcikLogin() {
@@ -15,4 +15,4 @@ class LoginPage {
   
 }
 
-export default new LoginPage; // Export the class so that it can be imported in other files
+export default new LoginPage(); // Export the class so that it can be imported in other files

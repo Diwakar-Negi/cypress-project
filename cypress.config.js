@@ -27,9 +27,10 @@ module.exports = defineConfig({
     pregolive: false
   },
   
-  specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js", ".cypress/support/pageobjects/*.js"],
+  //specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js", ".cypress/support/pageobjects/*.js"],
   video: false,
   viewportWidth: 1280,
   viewportHeight: 720,
+  screenshotOnRunFailure: false,
   
 });
