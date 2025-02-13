@@ -10,7 +10,28 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+
+const { default: LoginPage } = require("./pageObjects/LoginPage")
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('https://test-vt-lis.azurewebsites.net/')
+    LoginPage.enterUserame(username);
+    LoginPage.enterPassword(password);
+    LoginPage.clcikLogin();       
+    //cy.get(':nth-child(3) > .form-control').type(username)
+    //cy.get(':nth-child(4) > .form-control').type(password) 
+    //cy.get('form > .col-12 > .btn').click()
+    })
+
+
+Cypress.Commands.add('loginAndNavigate', (username, password, cssid, url) => {
+        cy.login(username, password) // Assuming `cy.login` is already defined
+        cy.get('.btn > .k-button-text').click()
+        cy.visit('https://test-vt-lis.azurewebsites.net/registration-type')
+        cy.get(cssid).click()  
+        cy.visit(url)
+})
+
 //
 //
 // -- This is a child command --
