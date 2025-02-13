@@ -19,15 +19,15 @@ module.exports = defineConfig({
     //  json: true
     //},
     experimentalRunAllSpecs: true,
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config);
-    }
+    //setupNodeEvents(on, config) {
+    //  return require('./cypress/plugins/index.js')(on, config);
+   // }
    },
   env: {
     pregolive: false
   },
   
-  //specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js", ".cypress/support/pageobjects/*.js"],
+  specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js"],
   video: false,
   viewportWidth: 1280,
   viewportHeight: 720,
