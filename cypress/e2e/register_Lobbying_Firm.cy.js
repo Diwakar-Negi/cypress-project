@@ -1,20 +1,24 @@
 describe('Register a new Lobbying Firm Registrant Type', () => {
-    //beforeEach(() => {
+    beforeEach(() => {
       // Visit the initial page where the buttons are located
-      //cy.fixture('testData').then(users); //=> {
-        //cy.login(users.validuser.username, users.validuser.password);
-        //cy.get('.btn > .k-button-text').click();
-    //cy.visit('https://test-vt-lis.azurewebsites.net/registration-type');  
-   // });    
+        cy.fixture('testData').then(users); => {
+            cy.login(users.validuser.username, users.validuser.password);
+            cy.get('.btn > .k-button-text').click();
+            cy.visit('https://test-vt-lis.azurewebsites.net/registration-type');  
+        };   
+    }); 
   
-    it('Register Lobbying Firm  when Lobbying Firm Registration is clicked', function () {
-        cy.fixture('testData').then(function(users) {
+    it('Register Lobbying Firm  when Lobbying Firm Registration is clicked', () => {
+        /* cy.fixture('testData').then((users) =>  {
             cy.loginAndNavigate(
                 users.validuser.username,
                 users.validuser.password,
                 ':nth-child(8) > .registrant-type-button > .k-button > .k-button-text',
                 'https://test-vt-lis.azurewebsites.net/create-registrant?type=3'
-            );
+            ); */
+
+            cy.get(':nth-child(8) > .registrant-type-button > .k-button > .k-button-text').click();
+            cy.visit('https://test-vt-lis.azurewebsites.net/create-registrant?type=3');  
 
             // Step 1: Fill in personal details
             cy.get('#firstField').type('NVIDIA');
@@ -35,6 +39,6 @@ describe('Register a new Lobbying Firm Registrant Type', () => {
         
         //     // Assert success message
         //     cy.contains('Form submitted successfully').should('be.visible');
-    });
+    //});
     });
 });
