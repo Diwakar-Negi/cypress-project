@@ -11,13 +11,13 @@ module.exports = defineConfig({
     viewportWidth: 1280,
     viewportHeight: 720,
     defaultCommandTimeout: 10000,
-    reporter: 'mochawesome', // Generates HTML reports
-    reporterOptions: {
-      reportDir: 'cypress/reports',
-      overwrite: false,
-      html: true,
-      json: true
-    },
+    //reporter: 'mochawesome', // Generates HTML reports
+    //reporterOptions: {
+    //  reportDir: 'cypress/reports',
+    //  overwrite: true,
+    //  html: true,
+    //  json: true
+    //},
     experimentalRunAllSpecs: true,
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config);
@@ -27,7 +27,7 @@ module.exports = defineConfig({
     pregolive: false
   },
   
-  specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js"],
+  specs: ["./cypress/e2e/**/*.cy.js", "./cypress/integration/**/*.cy.js", "./cypress/component/**/*.cy.js", ".cypress/support/pageobjects/*.js"],
   video: false,
   viewportWidth: 1280,
   viewportHeight: 720,
